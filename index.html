@@ -7,85 +7,93 @@
   <style>
     :root {
       --primary-color: #2e7d32;
-      --text-main: #333333;
-      --text-sub: #666666;
-      --bg-color: #f9fbf9;
+      --text-main: #2c3e50;
+      --text-sub: #596275;
+      --bg-color: #f8faf9;
       --card-bg: #ffffff;
-      --border-color: #e0e0e0;
+      --border-color: #e2e8f0;
+      --accent-box: #edf7ed;
     }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-      line-height: 1.75;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      line-height: 1.8;
       color: var(--text-main);
       background-color: var(--bg-color);
-      padding: 24px 16px;
+      padding: 32px 16px;
     }
     .container {
-      max-width: 720px;
+      max-width: 800px;
       margin: 0 auto;
       background: var(--card-bg);
-      padding: 40px 32px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      padding: 48px 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
       border: 1px solid var(--border-color);
     }
+    @media (max-width: 600px) {
+      .container { padding: 28px 20px; }
+    }
     header {
-      margin-bottom: 32px;
-      padding-bottom: 20px;
-      border-bottom: 2px solid #eee;
+      margin-bottom: 36px;
+      padding-bottom: 24px;
+      border-bottom: 2px solid #edf2f7;
     }
-    .app-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--primary-color);
-      margin-bottom: 4px;
-    }
-    h1 {
-      font-size: 1.6rem;
+    .app-tag {
+      display: inline-block;
+      font-size: 0.85rem;
       font-weight: 700;
-      color: #222;
-    }
-    .lead {
-      margin-top: 12px;
-      font-size: 0.95rem;
-      color: var(--text-sub);
-    }
-    h2 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-top: 32px;
+      color: var(--primary-color);
+      background: var(--accent-box);
+      padding: 4px 12px;
+      border-radius: 20px;
       margin-bottom: 12px;
-      padding-left: 10px;
-      border-left: 4px solid var(--primary-color);
-      color: #222;
     }
-    p {
-      margin-bottom: 14px;
-      font-size: 0.95rem;
-    }
-    ul, ol {
-      margin-left: 20px;
+    h1 { font-size: 1.75rem; font-weight: 800; color: #1a202c; letter-spacing: -0.02em; }
+    .date-info { margin-top: 10px; font-size: 0.85rem; color: var(--text-sub); }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 36px;
       margin-bottom: 16px;
-      font-size: 0.95rem;
+      padding-left: 12px;
+      border-left: 4px solid var(--primary-color);
+      color: #1a202c;
     }
-    li {
-      margin-bottom: 6px;
-    }
-    .notice {
-      background-color: #f4f6f4;
-      border-radius: 8px;
-      padding: 16px;
-      margin: 16px 0;
+    p { margin-bottom: 14px; font-size: 0.95rem; }
+    ul { margin-left: 20px; margin-bottom: 16px; font-size: 0.95rem; }
+    li { margin-bottom: 8px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px 0;
       font-size: 0.9rem;
+    }
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 12px 14px;
+      text-align: left;
+    }
+    th { background-color: #f7fafc; font-weight: 600; width: 35%; }
+    .notice-box {
+      background-color: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 20px 0;
+      font-size: 0.9rem;
+    }
+    .contact-box {
+      background-color: var(--accent-box);
+      border: 1px solid #c8e6c9;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+      font-size: 0.95rem;
     }
     footer {
       margin-top: 48px;
-      padding-top: 20px;
+      padding-top: 24px;
       border-top: 1px solid var(--border-color);
       text-align: center;
       font-size: 0.85rem;
@@ -97,61 +105,93 @@
 
 <div class="container">
   <header>
-    <div class="app-title">家事の当番・予定・ごはんを家族で共有「ぶんたん」</div>
+    <div class="app-tag">家事の当番・予定・ごはんを家族で共有「ぶんたん」</div>
     <h1>プライバシーポリシー</h1>
-    <p class="lead">制定日：2026年9月7日</p>
+    <div class="date-info">
+      制定日：2026年9月7日<br>
+      開発者・運営者：Ryotaro KAMOI
+    </div>
   </header>
 
   <main>
-    <p>「ぶんたん」（以下「本アプリ」）は、ユーザーのプライバシーを尊重し、個人情報の保護に努めています。本プライバシーポリシーでは、本アプリにおける個人情報・利用者情報の取り扱いについて定めます。</p>
+    <p>「ぶんたん」（以下「本アプリ」）は、ユーザーのプライバシーを尊重し、個人情報の保護に関する法律（個人情報保護法）およびApple Inc.が定めるApp Store審査ガイドライン等を遵守し、ユーザー情報の適切な取り扱いおよび保護に努めます。</p>
 
-    <h2>1. 取得する情報およびその利用目的</h2>
-    <p>本アプリでは、円滑な機能提供およびサービス運営のため、以下の情報を取得・利用します。</p>
+    <h2>1. 取得する情報とその利用目的</h2>
+    <p>本アプリは、提供する各機能の実現のために以下の利用者情報を取得・利用します。取得した情報は、明記した目的の範囲外で利用することはありません。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>取得する情報の種類</th>
+          <th>利用目的（App Store上の分類）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>氏名・ニックネーム</strong><br>（登録された表示名）</td>
+          <td><strong>【Appの機能】</strong><br>家グループ内での当番・予定・完了記録の識別およびメンバー間での表示のため。</td>
+        </tr>
+        <tr>
+          <td><strong>連絡先情報</strong><br>（メールアドレス）</td>
+          <td><strong>【Appの機能】</strong><br>アカウント登録・認証、確認メール送信、パスワード再設定、重要なお知らせの送信のため。</td>
+        </tr>
+        <tr>
+          <td><strong>ユーザー識別子（User ID）</strong><br>（ユーザー固有のアカウントID、Apple連携ID）</td>
+          <td><strong>【Appの機能】</strong><br>ユーザーアカウントの認証状態の保持、グループ紐付け、データ整合性維持のため。</td>
+        </tr>
+        <tr>
+          <td><strong>端末識別子（Device ID等）</strong><br>（プッシュ通知デバイストークン、OS・端末情報）</td>
+          <td><strong>【Appの機能 / サポート】</strong><br>家事・当番リマインドや共有更新通知の送信、および不具合発生時の技術調査のため。</td>
+        </tr>
+        <tr>
+          <td><strong>その他のユーザーコンテンツ</strong><br>（家事タスク、予定、ごはんの記録、完了ログ等）</td>
+          <td><strong>【Appの機能】</strong><br>同一の家（グループ）に参加する家族間での共有・同期および代理記録機能のため。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2. トラッキングおよび第三者配信広告の非適用</h2>
+    <p>本アプリは、ターゲティング広告の配信を目的とした第三者広告配信プラットフォームを使用しておらず、Appleの「App Tracking Transparency（ATT）」に定義される<strong>いかなるトラッキング（他社Appやウェブサイトを横断した行動追跡）も行いません。</strong></p>
+
+    <h2>3. 家族間でのデータ共有の仕組み</h2>
+    <p>本アプリは「招待コード」を通じて特定のメンバー間（「家」グループ）でデータを共有するサービスです。</p>
     <ul>
-      <li>
-        <strong>アカウント登録・認証情報：</strong><br>
-        メールアドレス、ユーザー名（プロフィール名）、認証用ID（Sign in with Apple等の識別子）。<br>
-        <em>（目的：ユーザー認証、ログイン維持、パスワード再設定等のアカウント管理のため）</em>
-      </li>
-      <li>
-        <strong>家族グループおよび共有コンテンツ：</strong><br>
-        家事の割り当て・当番の記録、予定、ごはんの記録、招待コード、グループ内メッセージ等の投稿内容。<br>
-        <em>（目的：グループ内（家）での当番・予定の共有、代理記録、通知等のアプリ基本機能提供のため）</em>
-      </li>
-      <li>
-        <strong>端末・ログ情報（機能提供・保守用）：</strong><br>
-        プッシュ通知用デバイストークン、OSバージョン、アプリバージョン等の技術的識別子。<br>
-        <em>（目的：家事リマインドや共有更新通知の配信、不具合発生時の調査およびサポート対応のため）</em>
-      </li>
+      <li>招待コードを入力してグループに参加したメンバー全員に、その家の中で登録された家事・予定・ごはん等のコンテンツが開示されます。</li>
+      <li>スマートフォンを持たない家族を代理登録した場合、その記録内容はグループ全員に共有・管理されます。</li>
+      <li>意図しない第三者への招待コードの共有はお控えください。</li>
     </ul>
 
-    <h2>2. 家族間でのデータ共有</h2>
-    <p>本アプリは「招待コード」を用いて特定の家族間で記録を共有する仕組みです。招待コードを知るメンバー間でのみグループ内の記録が閲覧・編集可能となります。意図しない第三者への招待コードの共有はお控えください。</p>
+    <h2>4. 外部委託・クラウド基盤の利用</h2>
+    <p>本アプリは、安定したサーバー運用・データ保管・認証基盤の提供のため、信頼性の高いクラウドサービス（Apple Inc.、Google LLC等のクラウド基盤）を利用しています。これらの事業者は厳正なセキュリティ基準を満たしており、本アプリの提供目的以外の用途でデータが用いられることはありません。</p>
 
-    <h2>3. 広告およびトラッキングについて</h2>
-    <p>本アプリでは、第三者配信事業者による行動追跡型広告（ターゲティング広告）の配信は行っておらず、広告目的でユーザーの個人情報や端末識別子を第三者に提供・トラッキングすることはありません。</p>
-
-    <h2>4. 第三者提供について</h2>
-    <p>法令に基づく場合を除き、あらかじめユーザーの同意を得ることなく、個人情報を第三者に提供することはありません。ただし、認証基盤やサーバーインフラ（クラウドサービス等）などの安全な運用のため、必要最小限の範囲で外部サービスプロバイダに処理を委託する場合があります。</p>
-
-    <h2>5. アカウントの削除およびデータの保持</h2>
-    <p>ユーザーは、本アプリ内の「設定」＞「アカウントを削除」から、いつでもご自身のアカウントを削除することができます。</p>
-    <div class="notice">
+    <h2>5. アカウントの削除およびデータの消去（Apple Guideline 5.1.1(v) 準拠）</h2>
+    <p>ユーザーは、本アプリ内の<strong>「設定」＞「アカウントを削除」</strong>から、いつでも即座にご自身のアカウントを削除できます。</p>
+    <div class="notice-box">
       <ul>
-        <li>アカウントを削除すると、アカウントおよびプロフィール情報は即座に削除され、参加しているグループ（家）から退出となります。</li>
-        <li>グループ内に他の家族が残っている場合、グループ全体の共有記録（過去の家事ログ等）は維持されますが、削除されたアカウントとの結びつきはすべて解除されます。</li>
-        <li>グループ内にログイン可能なメンバーが誰も残らなくなった場合、そのグループデータも完全に削除されます。</li>
+        <li><strong>個人情報の消去：</strong>アカウントを削除すると、メールアドレス、ログイン識別子、プロフィール名はサーバー上から即座に完全削除されます。</li>
+        <li><strong>グループデータの扱い：</strong>参加していた「家」に他の家族が残っている場合、日々の生活運営に支障をきたさないよう過去の共有記録（家事ログ等）は保持されますが、削除されたアカウントとの結びつきはすべて解除（匿名化）されます。</li>
+        <li><strong>家の完全削除：</strong>グループ内にログイン可能なメンバーが誰も残らなくなった場合、その「家」に関連するすべてのデータは自動的かつ完全に削除されます。</li>
       </ul>
     </div>
 
-    <h2>6. 免責事項・お問い合わせ時の注意</h2>
-    <p>お問い合わせの際は、不具合解消のためアプリバージョン、端末機種、OSバージョン、発生手順をお知らせください。セキュリティ保護のため、パスワードや招待コードは送信しないようお願いいたします。</p>
+    <h2>6. 未成年およびお子様のプライバシー</h2>
+    <p>本アプリは家族間での利用を想定しています。未成年の利用者が本アプリを利用する場合は、保護者（親権者）の同意を得た上でご利用ください。また、保護者が代理で登録したお子様の情報は、保護者の管理責任のもとで取り扱われます。</p>
 
-    <h2>7. プライバシーポリシーの改定</h2>
-    <p>本ポリシーは、法令の変更や本アプリの機能追加等に伴い、改定されることがあります。重要な変更がある場合は、アプリ内またはサポートサイトにて告知します。</p>
+    <h2>7. 個人情報の開示・訂正・利用停止等の請求</h2>
+    <p>ユーザーは、本アプリが保有する自己の個人情報について、個人情報保護法に基づく開示・訂正・追加・削除・利用停止を請求することができます。アプリ内の設定から変更・削除できないデータについては、下記のお問い合わせ窓口までご連絡ください。</p>
 
-    <h2>8. お問い合わせ窓口</h2>
-    <p>本アプリの個人情報の取り扱いに関するお問い合わせは、サポートページ内のお問い合わせ窓口（準備中）または指定の窓口までご連絡ください。</p>
+    <h2>8. プライバシーポリシーの改定</h2>
+    <p>法令の制定・改定やアプリの機能アップデートに伴い、本ポリシーを改定することがあります。重要な変更がある場合は、アプリ内のお知らせまたは本サポートサイト上にて通知します。</p>
+
+    <h2>9. お問い合わせ窓口</h2>
+    <p>個人情報の取り扱いに関するご質問、苦情、開示請求等は、以下のお問い合わせ窓口までご連絡ください。</p>
+    <div class="contact-box">
+      <strong>ぶんたん サポート・プライバシー窓口</strong><br>
+      運営者：Ryotaro KAMOI<br>
+      メールアドレス：<a href="kamosan41@gmail.com">kamosan41@gmail.com</a><br>
+      <span style="font-size: 0.85rem; color: #555;">※メールアドレスは実際にご自身が受信できるアドレスに変更してください。</span><br><br>
+      <small style="color: #666;">※不具合報告の際は、アプリバージョン、iPhone機種、iOSバージョン、発生時の操作手順をご記載ください。パスワードや招待コードは記載しないでください。</small>
+    </div>
   </main>
 
   <footer>
