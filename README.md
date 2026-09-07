@@ -1,1 +1,0 @@
-# buntan.github.io
